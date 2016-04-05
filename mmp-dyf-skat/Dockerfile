@@ -10,12 +10,17 @@ RUN gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 RUN sudo apt-get update
 RUN sudo apt-get -y install r-base
 
-# install R packages
-RUN sudo su - -c "R -e \"install.packages('dplyr', repos = 'http://cran.rstudio.com/')\""
-RUN sudo su - -c "R -e \"install.packages('fdrtool', repos = 'http://cran.rstudio.com/')\""
-RUN sudo su - -c "R -e \"install.packages('plyr', repos = 'http://cran.rstudio.com/')\""
-RUN sudo su - -c "R -e \"install.packages('SKAT', repos = 'http://cran.rstudio.com/')\""
-RUN sudo su - -c "R -e \"install.packages('stringr', repos = 'http://cran.rstudio.com/')\""
+# download & install R packages
+RUN wget https://cran.r-project.org/src/contrib/dplyr_0.4.3.tar.gz
+RUN wget https://cran.r-project.org/src/contrib/fdrtool_1.2.15.tar.gz
+RUN wget https://cran.r-project.org/src/contrib/plyr_1.8.3.tar.gz
+RUN wget https://cran.r-project.org/src/contrib/Archive/SKAT/SKAT_1.0.9.tar.gz
+RUN wget https://cran.r-project.org/src/contrib/stringr_1.0.0.tar.gz
+RUN R CMD INSTALL dplyr_0.4.3.tar.gz
+RUN R CMD INSTALL fdrtool_1.2.15.tar.gz
+RUN R CMD INSTALL plyr_1.8.3.tar.gz
+RUN R CMD INSTALL SKAT_1.0.9.tar.gz
+RUN R CMD INSTALL stringr_1.0.0.tar.gz
 
 # install git
 RUN apt-get install -y make git
