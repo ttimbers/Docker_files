@@ -7,4 +7,4 @@ Docker image for environment, software, scripts and data to accompany the SKAT a
 docker pull ttimbers/mmp-dyf-skat
 
 ## Owner
-Tiffany Timbers /([ttimbers](https://hub.docker.com/u/ttimbers/) on Docker Hub/)
+Tiffany Timbers ([ttimbers](https://hub.docker.com/u/ttimbers/) on Docker Hub)
