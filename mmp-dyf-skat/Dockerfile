@@ -28,9 +28,9 @@ RUN apt-get install -y make git
 # install plink
 RUN apt-get install -y wget
 RUN wget https://www.cog-genomics.org/static/bin/plink160224/plink_linux_x86_64.zip
-RUN mkdir /usr/bin/plink/plink
-RUN mv plink_linux_x86_64.zip /usr/bin/plink/plink
-RUN unzip /usr/bin/plink/plink/plink_linux_x86_64.zip
+RUN mkdir /usr/bin/plink
+RUN mv plink_linux_x86_64.zip /usr/bin/plink
+RUN unzip /usr/bin/plink/plink_linux_x86_64.zip
 
 # modify .bash_rc to put plink in the path
 RUN echo PATH="/usr/bin/plink:$PATH" >> ~/.bashrc
