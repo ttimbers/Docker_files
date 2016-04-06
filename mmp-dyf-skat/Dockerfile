@@ -10,12 +10,14 @@ RUN gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 RUN sudo apt-get update
 RUN sudo apt-get -y --force-yes install r-base
 
-# download & install R packages
+# download & install R packages 
+# !!! These commands only work in Docker interatively!!! So this Dockerfile doesn't work.
 sudo su - -c "R -e \"install.packages('dplyr', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"install.packages('fdrtool', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"install.packages('plyr', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"install.packages('SKAT', repos = 'http://cran.rstudio.com/')\""
 sudo su - -c "R -e \"install.packages('stringr', repos = 'http://cran.rstudio.com/')\""
+sudo su - -c "R -e \"install.packages('pwr', repos = 'http://cran.rstudio.com/')\""
 
 # install git
 RUN apt-get install -y wget
