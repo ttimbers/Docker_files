@@ -1,7 +1,7 @@
 # mmp-dyf-skat
 
 ## Full Description
-Docker image for environment, software, scripts and data to accompany the SKAT analysis of Million Mutation Project strains dye-filling phenotypes reported in Timbers et al. http://biorxiv.org/content/early/2015/10/22/027540
+Docker image for environment used for SKAT analysis of Million Mutation Project strains dye-filling phenotypes reported in Timbers et al. http://biorxiv.org/content/early/2015/10/22/027540
 
 ## Docker Pull Command
 docker pull ttimbers/mmp-dyf-skat
@@ -16,7 +16,7 @@ To do this, I created another Docker machine using the following commands in the
 
 ~~~
 # create new Docker machine
-docker-machine create --driver virtualbox --virtualbox-disk-size "100000" --virtualbox-memory"7168" Large
+docker-machine create --driver virtualbox --virtualbox-disk-size "100000" --virtualbox-memory "7168" Large
 
 # run docker command ps
 docker $(docker-machine config Large) ps

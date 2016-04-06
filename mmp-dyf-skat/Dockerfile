@@ -31,6 +31,3 @@ RUN mv plink /usr/bin/plink
 # note - to be able to run plink in path you need to exit docker container and re-enter it
 # before running code
 RUN echo PATH="/usr/bin/plink:$PATH" >> ~/.bashrc
-
-# pull code and data from github
-RUN git clone https://github.com/ttimbers/Million-Mutation-Project-dye-filling-SKAT.git /home/Million-Mutation-Project-dye-filling-SKAT
